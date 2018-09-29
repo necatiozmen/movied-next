@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const PosterCard = props => {
   return (
     <div className="box-main" >
@@ -8,7 +10,7 @@ const PosterCard = props => {
         <p>{props.title}</p>
       </div>
       <style jsx>{`
-         .box-main {
+        .box-main {
           display: flex;
           flex-direction: column;
           width: 120px;
@@ -16,7 +18,7 @@ const PosterCard = props => {
           margin-bottom: 70px;
         }
 
-         .box-image {
+        .box-image {
           max-height: 100%;
           max-width: 100%;
          }
@@ -29,7 +31,6 @@ const PosterCard = props => {
         .box-title > p {
           font-size: 11px;
         }
-
 
         @media only screen
           and (min-width: 320px)
@@ -48,10 +49,14 @@ const PosterCard = props => {
             font-size: 16px;
           }
         }
-
       `}</style>
     </div>
   );
+};
+
+PosterCard.propTypes = {
+  src: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default PosterCard;

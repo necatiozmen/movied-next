@@ -1,13 +1,14 @@
 import Layout from '../components/layout'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { getMovies, changeHeaderTitle } from '../actions'
 import Content from '../components/content'
 
 class Movies extends React.Component {
-    componentDidMount () {
-      this.props.getMovies()
-      this.props.changeHeaderTitle('Popular Movies');
-    }
+  componentDidMount () {
+    this.props.getMovies()
+    this.props.changeHeaderTitle('Popular Movies');
+  }
   render () {
     return (
       <Layout>
@@ -33,5 +34,13 @@ const mapDispatchToProps = dispatch => ({
   getMovies: data => dispatch(getMovies(data)),
   changeHeaderTitle: data => dispatch(changeHeaderTitle(data)),
 });
+
+Movies.propTypes = {
+  getMovies: PropTypes.func.isRequired,
+  changeHeaderTitle: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired,
+  isReady: PropTypes.bool,
+  isSomethingWrong: PropTypes.bool,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies)

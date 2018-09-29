@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import PosterCard from './posterCard'
 
-const Content = ({entries, isReady, isSomethingWrong}) => {
+const Content = ({ entries, isReady, isSomethingWrong }) => {
   const listItems = () => {
     if (!isSomethingWrong) {
       return entries.map((item, index) =>
@@ -25,7 +26,7 @@ const Content = ({entries, isReady, isSomethingWrong}) => {
         {content}
       </div>
       <style jsx>{`
-         .content-container {
+        .content-container {
           padding: 50px 95px 80px;
           background-color: #FDFDFD;
         }
@@ -48,5 +49,10 @@ const Content = ({entries, isReady, isSomethingWrong}) => {
   );
 };
 
+Content.propTypes = {
+  entries: PropTypes.array.isRequired,
+  isReady: PropTypes.bool,
+  isSomethingWrong: PropTypes.bool,
+};
 
 export default Content;
