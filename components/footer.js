@@ -1,3 +1,5 @@
+import Icon from '../static/Icons';
+
 const Footer = () => {
 return  (
     <div className="footer-container">
@@ -20,7 +22,7 @@ return  (
             <p>Copyright © 2018 DEMO Streaming. All Rights Reserved</p>
           </div>
         </div>
-        {/* <div className="footer-contact-container">
+        <div className="footer-contact-container">
           <div className="footer-icons">
             <Icon name="facebook" width={50} height={25} />
             <Icon name="twitter" width={50} height={25} />
@@ -31,7 +33,7 @@ return  (
             <Icon name="playstore" width={140} height={35} />
             <Icon name="windowstore" width={120} height={35} />
           </div>
-        </div> */}
+        </div>
       </div>
 
 

@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link';
 import { changeHeaderTitle } from '../actions'
-
 import Layout from '../components/layout';
 
  class Home extends React.Component {
@@ -19,7 +18,7 @@ import Layout from '../components/layout';
           <div className="box-container">
             <Link href="/series">
               <div className="box">
-                <h1 >SERIES</h1>
+                <h1>SERIES</h1>
               </div>
             </Link>
             <div className="box-under-title"><p>Popular Series</p></div>
@@ -35,68 +34,76 @@ import Layout from '../components/layout';
         </div>
 
         <style jsx>{`
-          .container {
-             font-family: 'Open Sans', 'Roboto', sans-serif;
-             font-weight: 300;
-             font-size: 14px;
+           .container {
+           font-family: 'Open Sans', 'Roboto', sans-serif;
+           font-weight: 300;
+           font-size: 14px;
+
+          }
+
+          .home-container {
+            display: flex;
+            padding: 35px 95px 80px;
+            background-color: #FDFDFD;
+
+          }
+
+          .home-container > div:first-child {
+            margin-right: 15px;
+          }
+
+          .box-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
+            height: 200px;
+            background-color: #1E1E1E;
+            background-image: url('../static/placeholder.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          .box > h1 {
+            font-family: 'Roboto', sans-serif;
+            color:#fff;
+          }
+
+          @media only screen
+            and (min-width: 320px)
+            and (max-width: 667px) {
+            .container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
             }
 
             .home-container {
-              display: flex;
-              padding: 35px 95px 80px;
-              background-color: #FDFDFD;
+              flex-direction: column;
             }
 
             .home-container > div:first-child {
-              margin-right: 15px;
-            }
-
-            .box-container {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
+              margin-right: 0;
+              margin-bottom: 25px;
             }
 
             .box {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 140px;
-              height: 200px;
-              background-color: #1E1E1E;
-              background-image: url('../../assets/placeholder.png');
-              background-size: cover;
-              background-repeat: no-repeat;
-              background-position: center;
+              width: 240px;
+              height: 300px;
             }
 
-            @media only screen
-              and (min-width: 320px)
-              and (max-width: 667px) {
-              .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-              }
-
-              .home-container {
-                flex-direction: column;
-              }
-
-              .home-container > div:first-child {
-                margin-right: 0;
-                margin-bottom: 25px;
-              }
-
-              .box {
-                width: 240px;
-                height: 300px;
-              }
-
-              .box-under-title {
-                align-self: center;
-              }
+            .box-under-title {
+              align-self: center;
             }
+          }
+
 
 
         `}</style>
