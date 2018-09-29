@@ -1,19 +1,9 @@
+module.exports = {
+  webpack: config => {
+    config.node = {
+      fs: 'empty'
+    }
 
-const withCSS = require('@zeit/next-css')
-module.exports = withCSS({/* my next config */})
-
-
-
-
-
-
-// module.exports = {
-//   webpack: config => {
-//     // Fixes npm packages that depend on `fs` module
-//     config.node = {
-//       fs: 'empty'
-//     }
-//
-//     return config
-//   }
-// }
+    return config
+  }
+}

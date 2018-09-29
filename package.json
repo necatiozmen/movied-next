@@ -1,14 +1,13 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next",
+    "dev": "node server/index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server/index.js"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
+    "express": "^4.16.3",
     "next": "^7.0.0",
-    "next-redux-wrapper": "^2.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

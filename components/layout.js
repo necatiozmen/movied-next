@@ -1,6 +1,5 @@
 import Header from './header';
 import Footer from './footer';
-import Home from './footer';
 import Head from 'next/head';
 
 const Layout = (props) => (
@@ -11,7 +10,7 @@ const Layout = (props) => (
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     </Head>
     <Header/>
-    {props.children}
+      {props.children}
     <Footer />
     <style jsx global>{`
       .Layout {
@@ -29,12 +28,12 @@ const Layout = (props) => (
           }
         }
 
-      body {
-        background-color: black;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-      }
+        body {
+          background-color: black;
+          margin: 0;
+          padding: 0;
+          font-family: 'Roboto', sans-serif;
+        }
     `}</style>
   </div>
 );

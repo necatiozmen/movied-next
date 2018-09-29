@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
 import Link from 'next/link';
-
+import PropTypes from 'prop-types';
 
 const Header = (props) => (
-
   <div className="header-container">
     <div className="header-nav">
       <div>
@@ -100,14 +99,16 @@ const Header = (props) => (
             padding-left: 0;
           }
       }
-
     `}</style>
   </div>
 )
 
-
 const mapStateToProps = state => ({
   headerTitle: state.headerType.headerTitle,
 });
+
+Header.propTypes = {
+  headerTitle: PropTypes.string,
+};
 
 export default connect(mapStateToProps)(Header)
