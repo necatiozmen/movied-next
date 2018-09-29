@@ -1,16 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Link from 'next/link';
+import { changeHeaderTitle } from '../actions'
+
 import Layout from '../components/layout';
 
-export default class extends React.Component {
-  // static async getInitialProps({ req }) {
-  //   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
-  //   return { userAgent }
-  // }
-  //
-  // componentDidMount() {
-  //   this.props.changeHeaderTitle('Popular Titles');
-  // }
+ class Home extends React.Component {
+
+  componentDidMount() {
+    this.props.changeHeaderTitle('Popular Titles');
+  }
 
   render() {
     return (
@@ -106,3 +105,10 @@ export default class extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  changeHeaderTitle: data => dispatch(changeHeaderTitle(data)),
+});
+
+
+export default connect(null,mapDispatchToProps)(Home);
