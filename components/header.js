@@ -1,7 +1,8 @@
+import { connect } from 'react-redux'
 import Link from 'next/link';
 
 
-const Header = () => (
+const Header = (props) => (
 
   <div className="header-container">
     <div className="header-nav">
@@ -17,7 +18,7 @@ const Header = () => (
     </div>
     <div className="entries-type">
       <div className="entries-type-title">
-        {/* <p>{props.headerTitle}</p> */}
+        <p>{props.headerTitle}</p>
       </div>
     </div>
     <style jsx>{`
@@ -105,4 +106,8 @@ const Header = () => (
 )
 
 
-export default Header;
+const mapStateToProps = state => ({
+  headerTitle: state.headerType.headerTitle,
+});
+
+export default connect(mapStateToProps)(Header)

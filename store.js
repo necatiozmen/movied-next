@@ -5,9 +5,7 @@ import reducers from './reducers';
 
 
 const exampleInitialState = {
-  headerTitle: '',
-  movies: [],
-  count: [],
+
 };
 
 export function initializeStore (initialState = exampleInitialState) {
