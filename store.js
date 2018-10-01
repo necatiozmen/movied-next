@@ -3,13 +3,6 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { api } from './middlewares/api'
 import reducers from './reducers';
 
-
-const exampleInitialState = {
-  headerTitle: '',
-  movies: [],
-  count: [],
-};
-
-export function initializeStore (initialState = exampleInitialState) {
+export function initializeStore (initialState = {}) {
   return createStore(reducers, initialState, composeWithDevTools(applyMiddleware(api)))
 }
