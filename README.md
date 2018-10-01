@@ -10,7 +10,7 @@ then
 
 `npm run dev`
 
-Server and Client compile together on http://localhost:3000
+Server and Client compile together on localhost:3000
  
 Express server included to project.No need external server.
 
