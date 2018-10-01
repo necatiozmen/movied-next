@@ -31,7 +31,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getSeries: data => dispatch(getSeries(data)),
+  getSeries: () => dispatch(getSeries()),
   changeHeaderTitle: data => dispatch(changeHeaderTitle(data)),
 });
 
